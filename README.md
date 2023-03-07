@@ -2,6 +2,11 @@ Hacked Elmish.Avalonia for cross platform compilation and almost ootb Avalonia W
 
 Building..
 
+One time..
+```
+dotnet workload install wasm-experimental wasm-tools
+```
+
 ```
 ./build.sh
 ```
