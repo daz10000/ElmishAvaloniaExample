@@ -1,0 +1,12 @@
+version 7.2.0-alpha001
+source https://api.nuget.org/v3/index.json
+
+framework: net7.0
+storage:none
+
+nuget FSharp.Core
+nuget Elmish.Avalonia > 1.0.0-alpha-2
+nuget Avalonia >= 11.0.0-preview5
+nuget Avalonia.Themes.Fluent
+nuget Avalonia.ReactiveUI
+nuget Avalonia.Desktop

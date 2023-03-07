@@ -1,0 +1,79 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:AvWebTest.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvWebTest.Views.MainView"
+             Foreground="White"
+             Background="#171C2C">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.fs) -->
+    <viewModels:MainViewModel />
+  </Design.DataContext>
+    
+    <StackPanel Orientation="Vertical"> 
+        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="5" Background="white">Add </Button>
+            <Button Margin="5">Search </Button>
+            <TextBox Width="500" Height="20" Padding="5,5,5,5"></TextBox>
+        </StackPanel> 
+        <ListBox Items="{Binding Docs}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="gray" CornerRadius="5" Padding="5">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width = "200" VerticalAlignment="Center" Text="{Binding Name}"/>
+                            <TextBlock Padding="5" Text="{Binding Count}"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate> 
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+    <!--
+    <StackPanel Orientation="Vertical"> 
+        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="5" Background="white">Add </Button>
+            <Button Margin="5">Search </Button>
+            <TextBox Width="500" Height="20" Padding="5,5,5,5"></TextBox>
+        </StackPanel> 
+        <ListBox>
+            <ListBoxItem Height="50" Margin="0">
+                <StackPanel Orientation="Horizontal">
+                    <Label VerticalAlignment="Center">1.</Label>
+                    <Label VerticalAlignment="Center">My first document</Label>
+                    <Button Margin="5">open </Button>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Height="50" Margin="0">
+                <StackPanel Orientation="Horizontal">
+                    <Label VerticalAlignment="Center">2.</Label>
+                    <Label VerticalAlignment="Center">My other document</Label>
+                    <Button Margin="5">open </Button>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Height="50">
+                <StackPanel Orientation="Horizontal">
+                    <Label VerticalAlignment="Center">3.</Label>
+                    <Label VerticalAlignment="Center">just some random </Label>
+                    <Button Margin="5">open </Button>
+                </StackPanel>
+            </ListBoxItem>
+        <StackPanel Orientation="Horizontal"> 
+            <Button Margin="5" Background="red">Hi</Button>
+            <TextBox Width="100" Height="20" Padding="5,5,5,5"></TextBox>
+        </StackPanel> 
+        <StackPanel Orientation="Horizontal"> 
+            <Button Margin="5">There </Button>
+            <TextBox Width="100" Height="20" Padding="5,5,5,5"></TextBox>
+        </StackPanel> 
+    </ListBox>
+    </StackPanel>
+    -->
+
+    
+</UserControl>
